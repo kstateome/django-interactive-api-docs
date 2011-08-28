@@ -6,5 +6,7 @@ from django.views.generic.simple import direct_to_template
 
 urlpatterns = patterns('',
     url(r'^$', home, name="home"),
+    url(r'^js/docs.js', build_js, name="build_js"),
+
     url(r'^admin/', include(admin.site.urls)),
 )
