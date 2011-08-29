@@ -54,6 +54,11 @@ $(document).ready(function() {
 		 
 		 {% endif %}
 		 processData: false,
+		 statusCode: {
+		    204: function() {
+			$('<h6>Response</h6><pre>204 Object Deleted</pre>').appendTo('#{{ method.slug }}_response');
+		    }
+		   },
 		 contentType: "application/x-www-form-urlencoded",
 		 success: function(data){
 		 
