@@ -1,65 +1,9 @@
 {% extends "api_docs/base.html" %}
 
 {% block extra_head %}
-<script>
-$(document).ready(function() {
-   $('.action').hide();
-   
-   $('.api_heading').click(function(){
-       $(this).parent().children('.action').slideToggle('slow');	  
-   });
-   $('.clear').click(function(){
-       $(this).parent().children('.response').empty();	  
-   });
-   {% for api in apis %}
-       {% for apiobj in api.apiobject_set.all %}
-	   {% for method in apiobj.apimethod_set.all %}
-	   $('#call_{{ method.slug }}').click(function(){
-	       {% if method.parameter.all %}
-		   var param_url = "?";
-		   var api_url = "{{ method.api_url }}";
-		   {% for param in method.parameter.all %}
-		   {% if param.type == 'text' %}
-		       var var_{{ param.name }} = $('input#{{ method.slug }}_{{ param.name }}').val();
-		       if (var_{{ param.name }} == '')
-		       {
-			   var_{{ param.name }} = "{{ param.default_value }}";
-		       }
-		       {% if param.get_or_url == 'get' %}
-		       param_url = param_url + "{{ param.name }}=" + {{ param.name }} + "";
-		       {% endif %}
-		       {% if param.get_or_url == 'url' %}
-		       api_url = api_url + "/" + {{ param.name }};
-		       
-		       {% endif %}
-		   {% endif %}
-		   {% endfor %}
-		   
-	       {% endif %}
-	       var call_url = api_url + param_url;
-	       $(this).parent().children('pre').replaceWith("<pre>{{ method.get_type_display }}: <a href='" + call_url + "'>" + call_url + "</a></pre>");
-	       
-	      //$.ajax({
-		// url: call_url,
-		 //dataType: 'jsonp',
-		 //type: '{{ method.get_type_display }}',
-		 {% if method.type == 'post' %}
-		 //data: { {% for param in method.parameter.all %} {% if param.type != 'no_input' %} {{ param.name }}: var_{{ param.name }}, {% endif %} {% endfor %} },
-		 {% endif %}
-		 //success: function(data){
-		 //  $('<h6>Response</h6><pre>' + JSON.stringify(data) + '</pre>').appendTo('#{{ method.slug }}_response')
-		 //}
-	      //});
-	      $.post(call_url, {name: 'fuck'}, function(data) {
-		 $('.result').html(data);
-		 });
-	      
-	   });
-	   {% endfor %}
-       {% endfor %}
-   {% endfor %}
- });
-		 </script>
+
+<script src="{% url stegelman.api_docs.views.build_js %}"></script>
+
 {% endblock %}
 {% block extra_section %} class="single_page"{% endblock %}
 {% block main_content %}
@@ -97,7 +41,7 @@ $(document).ready(function() {
 			<article class="api">
 			<p></p>
 			<h4 class="section_title">{{ api_thing.name }}</h4>
-                        {% for method in api_thing.apimethod_set.all %}
+                        {% for method in api_thing.apimethod_set.published %}
 			<section>
                                 <div class="api_heading">
 				<h5 class="{{ method.type }}">{{ method.get_type_display }}</h5>

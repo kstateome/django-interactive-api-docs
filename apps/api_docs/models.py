@@ -1,6 +1,20 @@
 from django.db import models
+from django.db.models.query import QuerySet
 from api_docs.choices import *
 from nutsbolts.utils.slugs import *
+
+class APIMethodMixin(object):
+
+    def published(self):
+        return self.filter(published=True)
+    
+class APIMethodQuerySet(QuerySet, APIMethodMixin):
+    pass
+
+class APIMethodManager(models.Manager, APIMethodMixin):
+    def get_query_set(self):
+        return APIMethodQuerySet(self.model, using=self._db)
+
 
 class APIDoc(models.Model):
     name = models.CharField(max_length=200)
@@ -45,6 +59,9 @@ class APIMethod(models.Model):
     display_url = models.CharField(max_length=300, help_text="This is the URL shown in docs, usually so you can add {item_id} where you would place a variable.")
     api_url = models.URLField(verify_exists=False, help_text="URL called for interactive docs, must be working API URL")
     parameter = models.ManyToManyField(Parameter, blank=True)
+    published = models.BooleanField()
+    
+    objects = APIMethodManager()
     
     def __unicode__(self):
         return self.name
