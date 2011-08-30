@@ -4,6 +4,13 @@
 * Use south
 * Django 1.3 is the latest version of django at the current time.
 
+## Notes
+
+This app includes a piece of middleware required for using jQuery with the PIP version of django-piston.  I have patched the core of django-piston so that
+this is not required, but you'll need to download my version of django-piston here. https://github.com/dstegelman/django-piston/tree/develop-stable
+
+I may begin distributing that version with this app if bug fixes continue to mount.
+
 ## Pip Requirements
 
 * django==1.3
