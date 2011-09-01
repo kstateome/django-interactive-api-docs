@@ -51,7 +51,7 @@ $(document).ready(function() {
 		 type: "{{ method.get_type_display }}",
 		 {% if method.type == 'post' or method.type == 'put' %}
 		 data: dataString,
-		 
+		  
 		 {% endif %}
 		 processData: false,
 		 statusCode: {
@@ -62,17 +62,19 @@ $(document).ready(function() {
 		 contentType: "application/x-www-form-urlencoded",
 		 success: function(data){
 		 
-		   $('<h6>Response</h6><pre>' + JSON.stringify(data) + '</pre>').appendTo('#{{ method.slug }}_response')
+		   $('<h6>Response</h6><pre>' + JSON.stringify(data) + '</pre>').appendTo('#{{ method.slug }}_response');
+		   
 		 },
 		 error: function(jqXHR, textStatus, errorThrown){
 		    if (errorThrown == "UNAUTHORIZED"){
 		    
-		    $('<h6>Response</h6><pre>401 API Key is missing or incorrect.</pre>').appendTo('#{{ method.slug }}_response')
+		    $('<h6>Response</h6><pre>401 API Key is missing or incorrect</pre>').appendTo('#{{ method.slug }}_response')
 		    }
 		    if (errorThrown == "NOT FOUND")
 		    {
-		    $('<h6>Response</h6><pre>404 Object not found.</pre>').appendTo('#{{ method.slug }}_response')
+		    $('<h6>Response</h6><pre>404 Object not found</pre>').appendTo('#{{ method.slug }}_response')
 		    }
+		    
 		 }
 	      });
 	      
