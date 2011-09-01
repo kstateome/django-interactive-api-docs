@@ -1,8 +1,16 @@
-#Assumptions
+#Overview
+
+This application is based upon interactive API Docs from the Mashery.  Interactive docs allow your API consumers to see exactly
+how your APIs are called and what results they should expect.  Take a look at api.stegelman.com for an example of how
+this app is implemented.
+
+
+##Assumptions/Requirement
 
 * Python 2.7, PIP, and virtualenv installed.
 * Use south
 * Django 1.3 is the latest version of django at the current time.
+* Documentation must reside on the same domain as the APIs in order to avoid cross-domain calls.
 
 ## Notes
 
