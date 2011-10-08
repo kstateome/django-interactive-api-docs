@@ -25,6 +25,12 @@ I may begin distributing that version with this app if bug fixes continue to mou
 * south
 * git+git://github.com/dstegelman/nutsbolts-utils.git
 
+## Add jquery middleware::
+
+
+    'api_docs.middleware.ContentTypeMiddleware',
+
+
 ## General procedure 
 
 Setup a new virtualenv::
