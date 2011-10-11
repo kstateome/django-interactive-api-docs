@@ -21,9 +21,8 @@ I may begin distributing that version with this app if bug fixes continue to mou
 
 ## Pip Requirements
 
-* django==1.3
+* django>=1.3
 * south
-* git+git://github.com/dstegelman/django-interactive-api-docs.git
 
 ## Add jquery middleware::
 

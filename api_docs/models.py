@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models.query import QuerySet
 from api_docs.choices import *
-from nutsbolts.utils.slugs import *
+from slugs import *
 
 class APIMethodMixin(object):
 
