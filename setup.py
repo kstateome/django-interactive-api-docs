@@ -1,14 +1,14 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
-version = '0.1.7'
+version = '0.1'
 
-setup(name='nuts-bolts-utils',
+setup(name='django-api-docs',
       version=version,
-      description="Utilities for Django apps",
-      long_description=open("./README.md", "r").read(),
+      description="Interactive API Documentation",
+      long_description=open("README.md", "r").read(),
       classifiers=[
           "Development Status :: 5 - Production/Stable",
-          "Environment :: Console",
+          "Environment :: Web Environment",
           "Intended Audience :: End Users/Desktop",
           "Natural Language :: English",
           "Operating System :: OS Independent",
@@ -17,13 +17,13 @@ setup(name='nuts-bolts-utils',
           "Topic :: Utilities",
           "License :: OSI Approved :: MIT",
           ],
-      keywords='django-utils',
+      keywords='django-api-docs',
       author='Derek Stegelman',
       author_email='dstegelman@gmail.com',
-      url='http://github.com/dstegelman/nutsbolts-utils',
+      url='http://github.com/dstegelman/django-interactive-docs',
       license='MIT',
-      packages=['nutsbolts', 'nutsbolts.utils', 'tagging', 'tagging.templatetags', 'tagging.migrations', 'tagging.tests'],
+      packages=find_packages(),
       install_requires = ['django==1.3'],
       include_package_data=True,
-      zip_safe=True,
-      )
+      zip_safe=False,
+    )
