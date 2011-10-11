@@ -23,7 +23,6 @@ setup(name='django-api-docs',
       url='http://github.com/dstegelman/django-interactive-docs',
       license='MIT',
       packages=find_packages(),
-      install_requires = ['django==1.3'],
       include_package_data=True,
       zip_safe=False,
     )
