@@ -8,5 +8,9 @@ this app is implemented.
 ## Read Some Docs
 
 http://docs.derek.stegelman.com/django_api_docs/
-    
+
+
+## Pip
+
+pip install git+git://github.com/dstegelman/django-interactive-api-docs.git
 
