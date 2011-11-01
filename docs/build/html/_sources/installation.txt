@@ -17,7 +17,7 @@ Installation
 
 Using ``pip``::
 
-    pip install https://github.com/dstegelman/django-interactive-api-docs
+    pip install git+git://github.com/dstegelman/django-interactive-api-docs.git
 
 Go to https://github.com/dstegelman/django-interactive-api-docs if you need to download a package or clone the repo.
 
