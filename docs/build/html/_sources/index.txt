@@ -22,6 +22,7 @@ Contents:
   templatecustomization
   javascript
   help
+  license
 
 
 Indices and tables
