@@ -1,3 +1,6 @@
+License
+=======
+
 Django Interactive API Documentation
 Copyright (C) 2011 Derek Stegelman
 
