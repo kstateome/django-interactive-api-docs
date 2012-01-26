@@ -1,8 +1,8 @@
 Metadata-Version: 1.0
 Name: django-api-docs
-Version: 1.0.1
+Version: 1.0.2
 Summary: Interactive API Documentation
-Home-page: http://github.com/dstegelman/django-interactive-docs
+Home-page: http://github.com/dstegelman/django-interactive-api-docs
 Author: Derek Stegelman
 Author-email: dstegelman@gmail.com
 License: MIT
@@ -23,7 +23,7 @@ Description: #Overview
         pip install django-api-docs
         
         
-Keywords: django-api-docs
+Keywords: django-interactive-api-docs
 Platform: UNKNOWN
 Classifier: Development Status :: 5 - Production/Stable
 Classifier: Environment :: Web Environment

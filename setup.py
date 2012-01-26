@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = '1.0.1'
+version = '1.0.2'
 
 setup(name='django-api-docs',
       version=version,
@@ -17,10 +17,10 @@ setup(name='django-api-docs',
           "Topic :: Utilities",
           "License :: OSI Approved :: MIT License",
           ],
-      keywords='django-api-docs',
+      keywords='django-interactive-api-docs',
       author='Derek Stegelman',
       author_email='dstegelman@gmail.com',
-      url='http://github.com/dstegelman/django-interactive-docs',
+      url='http://github.com/dstegelman/django-interactive-api-docs',
       license='MIT',
       packages=find_packages(),
       include_package_data=True,

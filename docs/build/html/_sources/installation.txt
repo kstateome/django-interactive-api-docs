@@ -16,7 +16,7 @@ Installation
 
 Using ``pip``::
 
-    pip install git+git://github.com/dstegelman/django-interactive-api-docs.git@master#egg=api_docs
+    pip install django-api-docs
 
 Go to https://github.com/dstegelman/django-interactive-api-docs if you need to download a package or clone the repo.
 

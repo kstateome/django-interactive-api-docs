@@ -16,15 +16,11 @@ api_docs/migrations/0004_auto__add_field_parameter_get_or_url.py
 api_docs/migrations/0005_auto__add_field_apimethod_display_url.py
 api_docs/migrations/0006_auto__add_field_apimethod_published.py
 api_docs/migrations/__init__.py
-api_docs/static/.DS_Store
-api_docs/static/api_docs/.DS_Store
 api_docs/static/api_docs/css/styles.css
 api_docs/static/api_docs/img/bg_body.gif
 api_docs/static/api_docs/img/css3buttons_backgrounds.png
 api_docs/static/api_docs/img/css3buttons_icons.png
 api_docs/static/api_docs/img/rss.png
-api_docs/templates/.DS_Store
-api_docs/templates/api_docs/.DS_Store
 api_docs/templates/api_docs/apis.html
 api_docs/templates/api_docs/base.html
 api_docs/templates/api_docs/docs.js

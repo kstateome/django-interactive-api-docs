@@ -45,7 +45,7 @@ The javascript that generates each API Doc control looks like this::
                        {% endfor %}
                        
                    {% endif %}
-                   var call_url = api_url + param_url + "&format=json";
+                   var call_url = api_url + param_url + "&format=jsonp";
                    $(this).parent().children('pre').replaceWith("<pre>{{ method.get_type_display }}: <a href='" + call_url + "'>" + call_url + "</a></pre>");
                    
                    {% if method.type == 'post' or method.type == 'put' %}
