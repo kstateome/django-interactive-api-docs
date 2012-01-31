@@ -54,6 +54,10 @@ $(document).ready(function() {
 		 {% endif %}
 		 processData: false,
 		 statusCode: {
+		    201: function() {
+		    $('<h6>Response</h6><pre>201 Object Created</pre>').appendTo('#{{ method.slug}}_response');
+		    }, 
+		 
 		    204: function() {
 			$('<h6>Response</h6><pre>204 Object Deleted</pre>').appendTo('#{{ method.slug }}_response');
 		    }
