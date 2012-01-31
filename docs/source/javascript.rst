@@ -3,7 +3,7 @@ Javascript Internals
 
 
 The Loop
--------
+--------
 
 In order to create the necessary javascript methods and functions, a loop is executed that builds a javascript file dyanmically.  It is not recommended to overwrite this file.
 

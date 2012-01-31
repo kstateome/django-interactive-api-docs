@@ -31,16 +31,6 @@ Open ``settings.py`` and add ``api_docs`` to your ``INSTALLED_APPS``::
         'south',
     )
     
-Open ``settings.py`` and add ``'api_docs.middleware.ContentTypeMiddleware'`` to middleware::
-
-    MIDDLEWARE_CLASSES = (
-    'django.middleware.common.CommonMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'api_docs.middleware.ContentTypeMiddleware',
-)
 
 Add URL-patterns::
 
