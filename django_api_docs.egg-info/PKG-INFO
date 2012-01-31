@@ -1,6 +1,6 @@
 Metadata-Version: 1.0
 Name: django-api-docs
-Version: 1.1.0
+Version: 1.1.1
 Summary: Interactive API Documentation
 Home-page: http://github.com/dstegelman/django-interactive-api-docs
 Author: Derek Stegelman
