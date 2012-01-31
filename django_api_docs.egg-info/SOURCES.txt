@@ -4,7 +4,6 @@ setup.py
 api_docs/__init__.py
 api_docs/admin.py
 api_docs/choices.py
-api_docs/middleware.py
 api_docs/models.py
 api_docs/slugs.py
 api_docs/urls.py
@@ -21,6 +20,8 @@ api_docs/static/api_docs/img/bg_body.gif
 api_docs/static/api_docs/img/css3buttons_backgrounds.png
 api_docs/static/api_docs/img/css3buttons_icons.png
 api_docs/static/api_docs/img/rss.png
+api_docs/templates/.DS_Store
+api_docs/templates/api_docs/.DS_Store
 api_docs/templates/api_docs/apis.html
 api_docs/templates/api_docs/base.html
 api_docs/templates/api_docs/docs.js
