@@ -1,2 +1,4 @@
 *.pyc
 data.db
+dist/
+django_api_docs.egg-info/
