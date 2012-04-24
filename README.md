@@ -7,10 +7,10 @@ this app is implemented.
 
 ## Read Some Docs
 
-  http://readthedocs.org/docs/django-api-docs/en/latest/
+    http://readthedocs.org/docs/django-api-docs/en/latest/
 
 
 ## Pip
 
-  pip install django-api-docs
+    pip install django-api-docs
 
