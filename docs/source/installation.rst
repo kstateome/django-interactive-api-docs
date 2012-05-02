@@ -11,13 +11,12 @@ Interactive API Docs requires::
     django 1.3 or greater
 
 
-
 Installation
 ------------
 
 Using ``pip``::
 
-    pip install git+git://github.com/dstegelman/django-interactive-api-docs.git
+    pip install django-api-docs
 
 Go to https://github.com/dstegelman/django-interactive-api-docs if you need to download a package or clone the repo.
 
@@ -32,16 +31,6 @@ Open ``settings.py`` and add ``api_docs`` to your ``INSTALLED_APPS``::
         'south',
     )
     
-Open ``settings.py`` and add ``'api_docs.middleware.ContentTypeMiddleware'`` to middleware::
-
-    MIDDLEWARE_CLASSES = (
-    'django.middleware.common.CommonMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'api_docs.middleware.ContentTypeMiddleware',
-)
 
 Add URL-patterns::
 
@@ -52,6 +41,5 @@ Add URL-patterns::
 Static Files
 ------------
 
-If you intend on using the default template, you'll need to grab the static files off of https://github.com/dstegelman/django-interactive-api-docs and copy them into an api_docs folder that can be seen 
-by your static web server.
+Run collect static to fetch the files for production, or copy the files out of api_docs/static to your static directory.
 

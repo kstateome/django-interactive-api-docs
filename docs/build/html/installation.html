@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -7,15 +8,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Quick Start Guide &mdash; Django Interactive API Documentation 1.0 documentation</title>
+    <title>Quick Start Guide &mdash; Django Interactive API Documentation 1.1.1 documentation</title>
     
-    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '1.0',
+        VERSION:     '1.1.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,7 +25,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Django Interactive API Documentation 1.0 documentation" href="index.html" />
+    <link rel="top" title="Django Interactive API Documentation 1.1.1 documentation" href="index.html" />
     <link rel="next" title="Template Customization" href="templatecustomization.html" />
     <link rel="prev" title="Documentation" href="index.html" /> 
   </head>
@@ -41,7 +42,7 @@
         <li class="right" >
           <a href="index.html" title="Documentation"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Django Interactive API Documentation 1.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Django Interactive API Documentation 1.1.1 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -62,7 +63,7 @@ django 1.3 or greater</pre>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <p>Using <tt class="docutils literal"><span class="pre">pip</span></tt>:</p>
-<div class="highlight-python"><pre>pip install git+git://github.com/dstegelman/django-interactive-api-docs.git</pre>
+<div class="highlight-python"><pre>pip install django-api-docs</pre>
 </div>
 <p>Go to <a class="reference external" href="https://github.com/dstegelman/django-interactive-api-docs">https://github.com/dstegelman/django-interactive-api-docs</a> if you need to download a package or clone the repo.</p>
 </div>
@@ -75,16 +76,6 @@ django 1.3 or greater</pre>
 <span class="p">)</span>
 </pre></div>
 </div>
-<p>Open <tt class="docutils literal"><span class="pre">settings.py</span></tt> and add <tt class="docutils literal"><span class="pre">'api_docs.middleware.ContentTypeMiddleware'</span></tt> to middleware:</p>
-<div class="highlight-python"><pre>MIDDLEWARE_CLASSES = (
-'django.middleware.common.CommonMiddleware',
-'django.contrib.sessions.middleware.SessionMiddleware',
-'django.middleware.csrf.CsrfViewMiddleware',
-'django.contrib.auth.middleware.AuthenticationMiddleware',
-'django.contrib.messages.middleware.MessageMiddleware',
-'api_docs.middleware.ContentTypeMiddleware',</pre>
-</div>
-<p>)</p>
 <p>Add URL-patterns:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">urlpatterns</span> <span class="o">=</span> <span class="n">patterns</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">,</span>
     <span class="p">(</span><span class="s">r&#39;^docs/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s">&#39;api_docs.urls&#39;</span><span class="p">)),</span>
@@ -94,8 +85,7 @@ django 1.3 or greater</pre>
 </div>
 <div class="section" id="static-files">
 <h2>Static Files<a class="headerlink" href="#static-files" title="Permalink to this headline">¶</a></h2>
-<p>If you intend on using the default template, you&#8217;ll need to grab the static files off of <a class="reference external" href="https://github.com/dstegelman/django-interactive-api-docs">https://github.com/dstegelman/django-interactive-api-docs</a> and copy them into an api_docs folder that can be seen
-by your static web server.</p>
+<p>Run collect static to fetch the files for production, or copy the files out of api_docs/static to your static directory.</p>
 </div>
 </div>
 
@@ -156,12 +146,12 @@ by your static web server.</p>
         <li class="right" >
           <a href="index.html" title="Documentation"
              >previous</a> |</li>
-        <li><a href="index.html">Django Interactive API Documentation 1.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Django Interactive API Documentation 1.1.1 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2011, Derek Stegelman.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.
+        &copy; Copyright 2011 - 2012, Derek Stegelman.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
     </div>
   </body>
 </html>

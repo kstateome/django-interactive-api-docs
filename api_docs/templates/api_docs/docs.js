@@ -33,33 +33,36 @@ $(document).ready(function() {
 		   {% endfor %}
 		   
 	       {% endif %}
-	       var call_url = api_url + param_url + "&format=json";
+	       var call_url = api_url + param_url + "&format=jsonp";
 	       $(this).parent().children('pre').replaceWith("<pre>{{ method.get_type_display }}: <a href='" + call_url + "'>" + call_url + "</a></pre>");
 	       
 	       {% if method.type == 'post' or method.type == 'put' %}
-	       var dataString = "";
+	       var dataString = {};
 		 {% for param in method.parameter.all %}
 		   {% if param.type != 'no_input' %}
-		     dataString = dataString + "&{{ param.name }}=" + var_{{ param.name }};
+		    dataString['{{ param.name }}'] = var_{{ param.name }};
 		   {% endif %}
 		 {% endfor %}
 	       {% endif %}
-	       
 	      $.ajax({
 		 url: call_url,
 		 dataType: 'jsonp',
 		 type: "{{ method.get_type_display }}",
 		 {% if method.type == 'post' or method.type == 'put' %}
-		 data: dataString,
+		 data: JSON.stringify(dataString),
 		  
 		 {% endif %}
 		 processData: false,
 		 statusCode: {
+		    201: function() {
+		    $('<h6>Response</h6><pre>201 Object Created</pre>').appendTo('#{{ method.slug}}_response');
+		    }, 
+		 
 		    204: function() {
 			$('<h6>Response</h6><pre>204 Object Deleted</pre>').appendTo('#{{ method.slug }}_response');
 		    }
 		   },
-		 contentType: "application/x-www-form-urlencoded",
+		 contentType: "application/json",
 		 success: function(data){
 		 
 		   $('<h6>Response</h6><pre>' + JSON.stringify(data) + '</pre>').appendTo('#{{ method.slug }}_response');

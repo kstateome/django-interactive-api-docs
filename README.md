@@ -7,10 +7,10 @@ this app is implemented.
 
 ## Read Some Docs
 
-http://docs.derek.stegelman.com/django_api_docs/
+http://readthedocs.org/docs/django-api-docs/en/latest/
 
 
 ## Pip
 
-pip install git+git://github.com/dstegelman/django-interactive-api-docs.git
+pip install django-api-docs
 
