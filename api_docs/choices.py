@@ -23,4 +23,5 @@ VAR_PLACEMENT = (
     ('put', 'PUT'),
     ('post', 'POST'),
     ('delete', 'DELETE'),
+    ('soap', 'SOAP'),
 )
