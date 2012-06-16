@@ -8,10 +8,10 @@ Documentation
 
 **Interactive Documenation for your APIs**.
 
-This documentation covers version 1.0 of API Docs
+This documentation covers version 1.x of API Docs
 
 .. note::
-    API Docs are tested under Django 1.3.1.
+    API Docs are tested under Django 1.4
 
 Contents:
 

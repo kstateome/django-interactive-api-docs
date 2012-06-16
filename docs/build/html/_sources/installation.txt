@@ -7,8 +7,8 @@ Requirements
 
 Interactive API Docs requires::
 
-    south
-    django 1.3 or greater
+    south 0.7.5 or greater
+    django 1.4 or greater
 
 
 Installation
