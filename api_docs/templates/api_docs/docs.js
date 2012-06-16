@@ -11,7 +11,38 @@ $(document).ready(function() {
    {% for api in apis %}
        {% for apiobj in api.apiobject_set.all %}
 	   {% for method in apiobj.apimethod_set.all %}
-	   $('#call_{{ method.slug }}').click(function(){
+           {% if method.type == "soap" %}
+
+               {% if method.parameter.all %}
+                   var param_url = "?";
+                   {% for param in method.parameter.all %}
+                       {% if param.type == "text" %}
+                           var var_{{ param.name }} = $('input#{{ method.slug }}_{{ param.name }}').val();
+                       {% endif %}
+                       param_url = param_url + "{{ param.name }}=" + var_{{ param.name }} + "&";
+                   {% endfor %}
+               {% endif %}
+
+
+               $('#call_{{ method.slug }}').click(function(){
+                   alert("{% url soap_api_call soap_method_id=method.id %}" + param_url);
+                   /*
+                   $.ajax({
+                       url: "{% url soap_api_call soap_method_id=method.id %}" + param_url,
+                       dataType: 'jsonp',
+                       success: function(data){
+                           $.each(data.objects, function(i,item){
+                               $("<article class='span5'><h4><a href='" + item.absolute_url + "'>" + item.name + "</a></h4>" + item.short_description + "</article>").appendTo("#{{ method.slug }}_response")
+
+                           });
+                       }
+                   });
+                */
+               });
+
+
+           {% else %}
+       $('#call_{{ method.slug }}').click(function(){
 	       {% if method.parameter.all %}
 		   var param_url = "?";
 		   var api_url = "{{ method.api_url }}";
@@ -83,6 +114,7 @@ $(document).ready(function() {
 	      
 	      
 	   });
+               {% endif %}
 	   {% endfor %}
        {% endfor %}
    {% endfor %}

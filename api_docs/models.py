@@ -43,7 +43,8 @@ class APIMethod(models.Model):
     description = models.TextField(blank=True)
     short_description = models.CharField(max_length=300, blank=True)
     display_url = models.CharField(max_length=300, help_text="This is the URL shown in docs, usually so you can add {item_id} where you would place a variable.")
-    api_url = models.URLField(verify_exists=False, help_text="URL called for interactive docs, must be working API URL")
+    api_url = models.URLField(verify_exists=False, help_text="URL called for interactive docs, must be working API URL or WSDL location")
+    method_call = models.CharField(max_length=200, help_text="Method called in the WSDL, only required for SOAP based API calls.", blank=True, null=True)
     parameter = models.ManyToManyField(Parameter, blank=True)
     published = models.BooleanField()
     
