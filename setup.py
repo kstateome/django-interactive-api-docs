@@ -23,7 +23,7 @@ setup(name='django-api-docs',
       url='http://github.com/dstegelman/django-interactive-api-docs',
       license='MIT',
       packages=find_packages(),
-      install_requires = ['hadrian==1.1.3',],
+      install_requires = ['hadrian==1.1.3', 'suds==0.4'],
       include_package_data=True,
       zip_safe=False,
     )

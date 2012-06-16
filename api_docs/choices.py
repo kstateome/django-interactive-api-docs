@@ -3,6 +3,7 @@ HTTP_METHOD = (
     ('post', 'POST'),
     ('put', 'PUT'),
     ('delete', 'DELETE'),
+    ('soap', 'SOAP'),
 )
 
 PARAM_TYPE = (

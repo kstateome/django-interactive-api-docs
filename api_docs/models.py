@@ -15,7 +15,7 @@ class APIObject(models.Model):
     
     def __unicode__(self):
         return self.name
-    
+
 class Parameter(models.Model):
     name = models.CharField(max_length=120, help_text="The actual name of the paramter, always lower case")
     slug = models.SlugField(editable=False)
