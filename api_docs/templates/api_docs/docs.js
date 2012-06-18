@@ -25,19 +25,18 @@ $(document).ready(function() {
 
 
                $('#call_{{ method.slug }}').click(function(){
-                   alert("{% url soap_api_call soap_method_id=method.id %}" + param_url);
-                   /*
+                   $("<h6 class='loading'>Calling method....</h6>").appendTo("#{{ method.slug }}_response");
+                    //alert(param_url)
                    $.ajax({
                        url: "{% url soap_api_call soap_method_id=method.id %}" + param_url,
-                       dataType: 'jsonp',
+                       //dataType: 'jsonp',
                        success: function(data){
-                           $.each(data.objects, function(i,item){
-                               $("<article class='span5'><h4><a href='" + item.absolute_url + "'>" + item.name + "</a></h4>" + item.short_description + "</article>").appendTo("#{{ method.slug }}_response")
-
-                           });
+                       var xml_string = (new XMLSerializer()).serializeToString(data);
+                        $(".loading").remove();
+                        $("<h6>Response</h6><pre>" + safe_tags(xml_string) + "</pre>").appendTo("#{{ method.slug }}_response");
                        }
                    });
-                */
+
                });
 
 
@@ -119,3 +118,7 @@ $(document).ready(function() {
        {% endfor %}
    {% endfor %}
  });
+
+function safe_tags(str) {
+   return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') ;
+}
