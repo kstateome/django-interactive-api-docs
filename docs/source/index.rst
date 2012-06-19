@@ -3,12 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Documentation
-=============
+Overview
+========
 
 **Interactive Documenation for your APIs**.
 
-This documentation covers version 1.x of API Docs
+
+
 
 .. note::
     API Docs are tested under Django 1.4
@@ -18,17 +19,15 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+  design
   installation
+  rest
+  soap
   templatecustomization
   javascript
   help
   license
 
 
-Indices and tables
-==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
