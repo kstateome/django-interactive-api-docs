@@ -11,7 +11,37 @@ $(document).ready(function() {
    {% for api in apis %}
        {% for apiobj in api.apiobject_set.all %}
 	   {% for method in apiobj.apimethod_set.all %}
-	   $('#call_{{ method.slug }}').click(function(){
+           {% if method.type == "soap" %}
+
+               {% if method.parameter.all %}
+                   var param_url = "?";
+                   {% for param in method.parameter.all %}
+                       {% if param.type == "text" %}
+                           var var_{{ param.name }} = $('input#{{ method.slug }}_{{ param.name }}').val();
+                       {% endif %}
+                       param_url = param_url + "{{ param.name }}=" + var_{{ param.name }} + "&";
+                   {% endfor %}
+               {% endif %}
+
+
+               $('#call_{{ method.slug }}').click(function(){
+                   $("<h6 class='loading'>Calling method....</h6>").appendTo("#{{ method.slug }}_response");
+                    //alert(param_url)
+                   $.ajax({
+                       url: "{% url soap_api_call soap_method_id=method.id %}" + param_url,
+                       //dataType: 'jsonp',
+                       success: function(data){
+                       var xml_string = (new XMLSerializer()).serializeToString(data);
+                        $(".loading").remove();
+                        $("<h6>Response</h6><pre>" + safe_tags(xml_string) + "</pre>").appendTo("#{{ method.slug }}_response");
+                       }
+                   });
+
+               });
+
+
+           {% else %}
+       $('#call_{{ method.slug }}').click(function(){
 	       {% if method.parameter.all %}
 		   var param_url = "?";
 		   var api_url = "{{ method.api_url }}";
@@ -83,7 +113,12 @@ $(document).ready(function() {
 	      
 	      
 	   });
+               {% endif %}
 	   {% endfor %}
        {% endfor %}
    {% endfor %}
  });
+
+function safe_tags(str) {
+   return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') ;
+}

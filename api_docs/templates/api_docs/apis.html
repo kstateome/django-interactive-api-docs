@@ -82,7 +82,9 @@
                                         {% endfor %}
 					
 					</table>
-                                        
+                    {% if method.method_call %}
+                    <h6>Call: {{ method.method_call }}({% for param in method.parameter.all %}{{ param.name }},{% endfor %})</h6>
+                    {% endif %}
                                         {% endif %}
                                         
                                         

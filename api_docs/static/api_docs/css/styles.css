@@ -494,6 +494,11 @@ section.home section article dl
 	color: #fff;
 }
 
+.api .soap
+{
+    background: #CFE1ED;
+}
+
 .single_page .api h4,
 .single_page .api span
 {
@@ -576,6 +581,7 @@ section.home section article dl
 {
 	font-size: 17px;
 	font-weight: bold;
+    margin-bottom: 6px;
 }
 
 .api .action pre
